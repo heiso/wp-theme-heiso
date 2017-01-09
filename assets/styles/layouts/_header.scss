@@ -1,0 +1,195 @@
+header {
+  color: $header-heading-color;
+  text-align: center;
+  background-color: rgba(68, 77, 53, 1);
+
+  @include large {
+    padding: 5rem 6rem 2rem;
+  }
+
+  @include medium {
+    padding: 3rem 4rem 2rem;
+  }
+
+  @include small {
+    padding: 2rem 1rem;
+  }
+
+  .brand {
+    color: $header-heading-color;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    @include large {
+      font-size: 3.25rem;
+    }
+
+    @include medium {
+      font-size: 2.25rem;
+    }
+
+    @include small {
+      font-size: 1.75rem;
+    }
+  }
+
+  .project-tagline {
+    margin-bottom: 2rem;
+    font-weight: normal;
+    opacity: 0.7;
+
+    @include large {
+      font-size: 1.25rem;
+    }
+
+    @include medium {
+      font-size: 1.15rem;
+    }
+
+    @include small {
+      font-size: 1rem;
+    }
+  }
+
+  .avatar {
+    position: relative;
+    margin: 3rem auto;
+
+    @include large {
+      height: 200px;
+      width: 200px;
+    }
+
+    @include medium {
+      height: 150px;
+      width: 150px;
+    }
+
+    @include small {
+      height: 150px;
+      width: 150px;
+    }
+  }
+
+  .avatar .img {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 9999px;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 2;
+
+    @include large {
+      background-size: auto 200px;
+    }
+
+    @include medium {
+      background-size: auto 150px;
+    }
+
+    @include small {
+      background-size: auto 150px;
+    }
+  }
+
+  @keyframes pulse {
+    to {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  .avatar::before,
+  .avatar::after {
+    animation: pulse 5s linear infinite;
+    border: #fff solid 5px;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    content: ' ';
+    height: 130%;
+    left: -15%;
+    opacity: .15;
+    position: absolute;
+    top: -15%;
+    transform: scale(0.714);
+    width: 130%;
+    z-index: 1;
+  }
+
+  .avatar::after {
+    animation-delay: 5s;
+  }
+
+  .avatar:hover::before,
+  .avatar:hover::after {
+    animation-duration: 1s;
+  }
+
+  .avatar:hover::after {
+    animation-delay: .5s;
+  }
+
+  ul.nav {
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-bottom: 1rem;
+
+      + li {
+        margin-left: 1rem;
+      }
+
+      @include small {
+        display: block;
+        width: 100%;
+
+        + li {
+          margin-top: 1rem;
+          margin-left: 0;
+        }
+      }
+
+      a {
+        color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.2);
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 0.3rem;
+        transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+
+        &:hover {
+          color: rgba(255, 255, 255, 0.8);
+          text-decoration: none;
+          background-color: rgba(255, 255, 255, 0.2);
+          border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        @include large {
+          padding: 0.75rem 1rem;
+        }
+
+        @include medium {
+          padding: 0.6rem 0.9rem;
+          font-size: 0.9rem;
+        }
+
+        @include small {
+          display: block;
+          width: 100%;
+          padding: 0.75rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+}
+
