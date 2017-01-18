@@ -16,7 +16,7 @@ header {
   }
 
   .brand {
-    color: $header-heading-color;
+    color: $header-heading-color !important;
     font-family: 'Raleway', sans-serif;
     margin-top: 0;
     margin-bottom: 1rem;

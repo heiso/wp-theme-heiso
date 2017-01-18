@@ -23,6 +23,11 @@ add_action('customize_register', function ($wp_customize) {
         'priority' => 130,
         'active_callback' => 'is_front_page',
     ));
+
+    $wp_customize->add_setting('header_textcolor' , array(
+        'default' => '#159957',
+        'transport' => 'refresh'
+    ));
 });
 
 /**
